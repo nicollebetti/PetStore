@@ -5,7 +5,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.Matchers.contains;
 
 public class Pet {
    String  uri = "https://petstore.swagger.io/v2/pet"; //endereço  deentidade Pet
@@ -27,6 +29,12 @@ public class Pet {
              .post(uri)
      .then()
              .log().all()
-             .statusCode(200);
+             .statusCode(200)
+             .body("name", is("miau"))
+             .body("status", is("available"))
+             .body("category.name", is("cat"))
+             .body("tags.name", contains("sta"));
+     // uma estrutura sem colchete usa is quando vou checar com um colchote eu uso contains
+
    }
 }
