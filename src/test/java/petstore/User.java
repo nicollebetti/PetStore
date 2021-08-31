@@ -1,27 +1,28 @@
 package petstore;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import utils.Data;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.nullValue;
-import static org.hamcrest.Matchers.contains;
+
 
 public class User {
 
     String uri = "https://petstore.swagger.io/v2/user";
+    Data data;
 
-    public String lerJson(String caminhoJson) throws IOException {
-        return new String(Files.readAllBytes(Paths.get(caminhoJson)));
+    @BeforeMethod
+    public void  setup(){
+        data = new Data();
     }
+
 
     @Test(priority = 1)
     public void incluirUsuario() throws IOException {
-        String jsonBody = lerJson("db/user1.json");
+        String jsonBody = data.lerJson("db/user1.json");
         String userId =
 
         given()
