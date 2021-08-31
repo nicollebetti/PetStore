@@ -17,7 +17,7 @@ public class Pet {
       return new String(Files.readAllBytes(Paths.get(caminhoJson)));
    }
 
-   @Test
+   @Test (priority = 1)
    public void incluirPet() throws IOException {
      String jsonBody = lerJson("Database/pet1.json");
 
@@ -32,9 +32,26 @@ public class Pet {
              .statusCode(200)
              .body("name", is("miau"))
              .body("status", is("available"))
-             .body("category.name", is("cat"))
+             .body("category.name", is("AX23292383LO"))
              .body("tags.name", contains("sta"));
      // uma estrutura sem colchete usa is quando vou checar com um colchote eu uso contains
 
+   }
+
+   @Test (priority = 2)
+   public void consultarPet(){
+       String petId = "1234567966";
+
+       given()
+               .contentType("application/json")
+               .log().all()
+
+       .when()
+               .get(uri + "/" + petId)
+       .then()
+               .log().all()
+               .statusCode(200)
+               .body("name", is("miau"))
+               .body("status", is("available"));
    }
 }
