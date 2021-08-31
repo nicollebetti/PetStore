@@ -2,5 +2,7 @@ petstore/User.java
  petstore.User
 petstore/Pet.java
  petstore.Pet
+utils/Data.java
+ utils.Data
 datadriven/UserDD.java
  datadriven.UserDD

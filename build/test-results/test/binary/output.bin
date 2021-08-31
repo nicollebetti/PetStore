@@ -11,17 +11,17 @@
 Multiparts:		<none>
 Body:
 {
-    "id": 12345,
-    "username": "homemaranha",
-    "firstName": "piter",
-    "lastName": "park",
-"    "email": "testeus@gmail.com",
+    "lastName": "mouse",
+    "firstname": "minnie",
     "password": "123456",
-    "phone": "11123456789",
-    "userStatus": 0
+    "userStatus": "0",
+    "phone": "3400000000",
+    "id": "5001",
+$    "email": "minnie@teste.com.br",
+    "username": "minnie"
 }
 HTTP/1.1 200 OK
-$Date: Mon, 30 Aug 2021 23:26:34 GMT
+$Date: Tue, 31 Aug 2021 02:27:40 GMT
 Content-Type: application/json
 Transfer-Encoding: chunked
 Connection: keep-alive
@@ -33,6 +33,44 @@
 {
     "code": 200,
     "type": "unknown",
-    "message": "12345"
+    "message": "5001"
 }
-User id 12345
+User id 5001
+Request method:	POST
+1Request URI:	https://petstore.swagger.io/v2/user
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+1				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "lastName": "mouse",
+    "firstname": "mickey",
+    "password": "123456",
+    "userStatus": "0",
+    "phone": "3400000001",
+    "id": "5002",
+$    "email": "mickey@teste.com.br",
+    "username": "mickey"
+}
+HTTP/1.1 200 OK
+$Date: Tue, 31 Aug 2021 02:27:42 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Access-Control-Allow-Origin: *
+5Access-Control-Allow-Methods: GET, POST, DELETE, PUT
+CAccess-Control-Allow-Headers: Content-Type, api_key, Authorization
+Server: Jetty(9.2.9.v20150224)
+
+{
+    "code": 200,
+    "type": "unknown",
+    "message": "5002"
+}
+User id 5002

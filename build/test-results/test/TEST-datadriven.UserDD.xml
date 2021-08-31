@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="datadriven.UserDD" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-30T23:26:30" hostname="nicolle" time="5.078">
+<testsuite name="datadriven.UserDD" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-08-31T02:27:36" hostname="nicolle" time="6.257">
   <properties/>
-  <testcase name="incluirUsuario" classname="datadriven.UserDD" time="5.078"/>
+  <testcase name="incluirUsuario[0](5001, minnie, minnie, mouse, minnie@teste.com.br, 123456, 3400000000, 0)" classname="datadriven.UserDD" time="4.716"/>
+  <testcase name="incluirUsuario[1](5002, mickey, mickey, mouse, mickey@teste.com.br, 123456, 3400000001, 0)" classname="datadriven.UserDD" time="1.535"/>
   <system-out><![CDATA[Request method:	POST
 Request URI:	https://petstore.swagger.io/v2/user
 Proxy:			<none>
@@ -15,17 +16,17 @@ Cookies:		<none>
 Multiparts:		<none>
 Body:
 {
-    "id": 12345,
-    "username": "homemaranha",
-    "firstName": "piter",
-    "lastName": "park",
-    "email": "testeus@gmail.com",
+    "lastName": "mouse",
+    "firstname": "minnie",
     "password": "123456",
-    "phone": "11123456789",
-    "userStatus": 0
+    "userStatus": "0",
+    "phone": "3400000000",
+    "id": "5001",
+    "email": "minnie@teste.com.br",
+    "username": "minnie"
 }
 HTTP/1.1 200 OK
-Date: Mon, 30 Aug 2021 23:26:34 GMT
+Date: Tue, 31 Aug 2021 02:27:40 GMT
 Content-Type: application/json
 Transfer-Encoding: chunked
 Connection: keep-alive
@@ -37,9 +38,47 @@ Server: Jetty(9.2.9.v20150224)
 {
     "code": 200,
     "type": "unknown",
-    "message": "12345"
+    "message": "5001"
 }
-User id 12345
+User id 5001
+Request method:	POST
+Request URI:	https://petstore.swagger.io/v2/user
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "lastName": "mouse",
+    "firstname": "mickey",
+    "password": "123456",
+    "userStatus": "0",
+    "phone": "3400000001",
+    "id": "5002",
+    "email": "mickey@teste.com.br",
+    "username": "mickey"
+}
+HTTP/1.1 200 OK
+Date: Tue, 31 Aug 2021 02:27:42 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, DELETE, PUT
+Access-Control-Allow-Headers: Content-Type, api_key, Authorization
+Server: Jetty(9.2.9.v20150224)
+
+{
+    "code": 200,
+    "type": "unknown",
+    "message": "5002"
+}
+User id 5002
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
